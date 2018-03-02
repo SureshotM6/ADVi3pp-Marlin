@@ -41,9 +41,9 @@
 
 namespace
 {
-    const uint16_t advi3_pp_version = 0x0210;                       // 2.1.0
-    const uint16_t advi3_pp_oldest_lcd_compatible_version = 0x0210; // 2.1.0
-    const uint16_t advi3_pp_newest_lcd_compatible_version = 0x0210; // 2.1.0
+    const uint16_t advi3_pp_version = 0x0211;                       // 2.1.1
+    const uint16_t advi3_pp_oldest_lcd_compatible_version = 0x0211; // 2.1.1
+    const uint16_t advi3_pp_newest_lcd_compatible_version = 0x0211; // 2.1.1
     // Modify also DETAILED_BUILD_VERSION in Version.h
 
     const unsigned long advi3_pp_baudrate = 115200;
@@ -1893,10 +1893,8 @@ void PrinterImpl::update_graphs()
 //! Update the graphics (two channels: the bed and the hotend).
 void PrinterImpl::send_graphs_data()
 {
-    WriteCurveDataRequest frame{0b00001111};
+    WriteCurveDataRequest frame{0b00000011};
     frame << Uint16{thermalManager.degHotend(0)}
-          << Uint16{thermalManager.degHotend(0)}
-          << Uint16{thermalManager.degBed()}
           << Uint16{thermalManager.degBed()};
     frame.send(false);
 }
