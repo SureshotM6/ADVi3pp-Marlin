@@ -819,6 +819,7 @@ void PrinterImpl::load_filament_task()
     {
         Log::log() << F("Load Filament") << Log::endl();
         enqueue_and_echo_commands_P(PSTR("G1 E1 F120"));
+        LCD::buzz(100);
     }
     set_next_background_task_time();
 }
@@ -830,6 +831,7 @@ void PrinterImpl::unload_filament_task()
     {
         Log::log() << F("Unload Filament") << Log::endl();
         enqueue_and_echo_commands_P(PSTR("G1 E-1 F120"));
+        LCD::buzz(100);
     }
     set_next_background_task_time();
 }

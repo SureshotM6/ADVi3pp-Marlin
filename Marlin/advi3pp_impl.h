@@ -309,7 +309,7 @@ struct LCDImpl
     const String& get_progress() const;
     void reset_progress();
 
-    void buzz(long duration, uint16_t freq);
+    void buzz(long duration, uint16_t freq = 0);
 
 private:
     String message_;
