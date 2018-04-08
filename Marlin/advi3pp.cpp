@@ -46,7 +46,7 @@ namespace
     const uint16_t advi3_pp_newest_lcd_compatible_version = 0x0211; // 2.1.1
     // Modify also DETAILED_BUILD_VERSION in Version.h
 
-    const unsigned long advi3_pp_baudrate = 115200;
+    const unsigned long advi3_pp_baudrate = 250000;
     const uint16_t nb_visible_sd_files = 5;
     const uint16_t calibration_cube_size = 20; // 20 mm
     const uint16_t calibration_extruder_filament = 100; // 10 cm
